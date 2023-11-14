@@ -1,0 +1,43 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.cocoa_block",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [8, 0, -8],
+					"cubes": [
+						{
+							"origin": [-4, 3, -1],
+							"size": [8, 9, 8],
+							"uv": {
+								"north": {"uv": [8, 4], "uv_size": [8, 8.66667]},
+								"east": {"uv": [8, 4], "uv_size": [8, 8.66667]},
+								"south": {"uv": [8, 4], "uv_size": [8, 8.66667]},
+								"west": {"uv": [8, 4], "uv_size": [8, 8.66667]},
+								"up": {"uv": [8, 8], "uv_size": [-8, -8]},
+								"down": {"uv": [8, 8], "uv_size": [-8, -8]}
+							}
+						},
+						{
+							"origin": [0, 12, 4],
+							"size": [0, 4, 4],
+							"uv": {
+								"east": {"uv": [16, 0], "uv_size": [-4, 4]},
+								"west": {"uv": [12, 0], "uv_size": [4, 4]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

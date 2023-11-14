@@ -1,0 +1,56 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.cx.glow_zero",
+				"texture_width": 48,
+				"texture_height": 48,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 0, -8],
+							"size": [16, 16, 16],
+							"uv": {}
+						},
+						{
+							"origin": [2, 0.15, -6],
+							"size": [4, 0, 12],
+							"uv": {
+								"up": {"uv": [38, 14], "uv_size": [-4, -12]}
+							}
+						},
+						{
+							"origin": [-6, 0.15, -6],
+							"size": [4, 0, 12],
+							"uv": {
+								"up": {"uv": [46, 14], "uv_size": [-4, -12]}
+							}
+						},
+						{
+							"origin": [-2, 0.15, 2],
+							"size": [4, 0, 4],
+							"uv": {
+								"up": {"uv": [42, 14], "uv_size": [-4, -4]}
+							}
+						},
+						{
+							"origin": [-2, 0.15, -6],
+							"size": [4, 0, 4],
+							"uv": {
+								"up": {"uv": [42, 6], "uv_size": [-4, -4]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
