@@ -1,0 +1,103 @@
+{
+    "format_version": "1.20.0",
+    "render_controllers": {
+        "controller.render.default": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.default"
+            ]
+        },
+        "controller.render.target": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.default"
+            ],
+            "light_color_multiplier": "1.25+math.sin(q.anim_time*180)*0.25"
+        },
+        "controller.render.billboard": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.default"
+            ],
+            "part_visibility": [
+                {"*": true},
+                {"image": false}
+            ],
+            "ignore_lighting": true,
+            "light_color_multiplier": "(1.25)"
+        },
+        "controller.render.billboard_animation": {
+            "arrays": {
+                "textures": {
+                    "array.t": [
+                        "Texture.animation",
+                        "Texture.winner"
+                    ]
+                }
+            },
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.animated"
+                }
+            ],
+            "textures": [ "array.t[v.state]" ],
+            "part_visibility": [
+                {"*": false},
+                {"image": true}
+            ],
+            "uv_anim": {
+                "offset": [0,"math.round(query.life_time*8)/64"],
+                "scale": [1,"1/64"]
+            },
+            "ignore_lighting": true,
+            "light_color_multiplier": "(1.25)"
+        },
+        "controller.render.billboard_lost": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "Texture.lost"
+            ],
+            "part_visibility": [
+                {"*": false},
+                {"image": true}
+            ],
+            "ignore_lighting": true
+        },
+        "controller.render.fireplace_animation": {
+            "geometry": "Geometry.default",
+            "materials": [
+                {
+                    "*": "Material.animated"
+                }
+            ],
+            "textures": [ "Texture.default" ],
+            "uv_anim": {
+                "offset": [0,"math.round(query.life_time*16)/16"],
+                "scale": [1,"1/16"]
+            },
+            "ignore_lighting": true,
+            "light_color_multiplier": "(1.5)"
+        }
+    }
+}

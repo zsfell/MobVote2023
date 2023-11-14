@@ -1,0 +1,33 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:mob_b_billboard",
+            "materials": { "default": "entity_alphatest", "animated": "animated_alphatest" },
+            "textures": {
+                "default": "textures/entity/billboards/mob_b_billboard",
+                "animation": "textures/entity/billboards/mob_b_animation",
+                "lost": "textures/entity/billboards/mob_b_lost",
+                "winner": "textures/entity/billboards/mob_b_winner"
+            },
+            "animations": { "rot_to_cam": "animation.voting_platform.arm_rotation" },
+            "scripts": {
+                "initialize": [
+                    "v.state = 0;"
+                ],
+                "pre_animation": [
+                    "v.state = q.property('mule:status') == 'default'? 0 : v.state;",
+                    "v.state = q.property('mule:status') == 'won'? 1 : v.state;",
+                    "v.state = q.property('mule:status') == 'lost'? 2 : v.state;"
+                ],
+                "animate": [ "rot_to_cam" ]
+            },
+            "geometry": { "default": "geometry.voting_platform" },
+            "render_controllers": [
+                "controller.render.billboard",
+                {"controller.render.billboard_animation": "v.state != 2"},
+                { "controller.render.billboard_lost": "v.state == 2"}
+            ]
+        }
+    }
+}

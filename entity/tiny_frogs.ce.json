@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mule:tiny_frogs",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/tiny_frogs"
+			},
+			"geometry": {
+				"default": "geometry.tiny_frogs"
+			},
+			"animations": {
+				"dance": "animation.tiny_frog.dance"
+			},
+			"scripts": {
+				"animate": ["dance"]
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#5ae12d",
+				"overlay_color": "#eeca81"
+			}
+		}
+	}
+}

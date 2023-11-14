@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mule:tiny_villager_taiga",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/tiny_villager_taiga"
+			},
+			"geometry": {
+				"default": "geometry.tiny_villager"
+			},
+			"animations": {
+				"idle":"animation.tiny_villager.villager_idle"
+			},
+			"scripts": {
+				"animate":[ "idle"]
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#af7e4f",
+				"overlay_color": "#fcffeb"
+			}
+		}
+	}
+}

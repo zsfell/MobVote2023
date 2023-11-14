@@ -1,0 +1,26 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:wam_enderman",
+            "materials": { "default": "entity_alphatest" },
+            "textures": { "default": "textures/entity/tiny_enderman" },
+            "geometry": { "default": "geometry.tiny_enderman" },
+            "animations": {
+                "dance": "animation.tiny_creeper.dance2",
+                "spawn": "animation.tiny_creeper.spawn3",
+                "despawn": "animation.tiny_villager.despawn",
+                "bonk": "animation.tiny_creeper.bonk2",
+                "fx_locator": "animation.tiny_zombie.fx_locator",
+                "wam_control": "controller.animation.wam.villager",
+                "hit_fx": "animation.wam.hit_particle",
+                "fuse_sfx": "animation.wam.fuse.sfx"
+            },
+            "sound_effects": { "fuse": "creeper_fuse", "explode": "explode" },
+            "particle_effects": { "whack": "mule:whack_a_mob" },
+            "scripts": { "animate": ["wam_control", "fx_locator"] },
+            "render_controllers": ["controller.render.default"],
+            "spawn_egg": { "base_color": "#409815", "overlay_color": "#a748b8" }
+        }
+    }
+}

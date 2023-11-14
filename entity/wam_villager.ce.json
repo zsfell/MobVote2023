@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:wam_villager",
+            "materials": { "default": "entity_alphatest" },
+            "textures": { "default": "textures/entity/tiny_villager" },
+            "geometry": { "default": "geometry.tiny_villager" },
+            "animations": {
+                "dance": "animation.tiny_creeper.dance",
+                "spawn": "animation.tiny_creeper.spawn2",
+                "despawn": "animation.tiny_villager.despawn",
+                "bonk": "animation.tiny_creeper.bonk2",
+                "wam_control": "controller.animation.wam.villager",
+                "hit_fx": "animation.wam.hit_particle"
+            },
+            "particle_effects": { "whack": "mule:whack_a_mob_bad" },
+            "scripts": { "animate": [ "wam_control" ]},
+            "render_controllers": [ "controller.render.default" ],
+            "spawn_egg": { "base_color": "#625e45", "overlay_color": "#a748b8" }
+        }
+    }
+}

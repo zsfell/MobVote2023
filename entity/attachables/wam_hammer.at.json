@@ -1,0 +1,26 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "mule:wam_hammer",
+            "materials": {
+                "default": "armor"
+            },
+            "animations": {
+                "FP_pose": "animation.wam_hammer.first_person"
+            },
+            "scripts": {
+                "animate": [
+                    "FP_pose"
+                ]
+            },
+            "textures": {
+                "default": "textures/entity/wam_hammer"
+            },
+            "geometry": {
+                "default": "geometry.wam_hammer"
+            },
+            "render_controllers": ["controller.render.default"]
+        }
+    }
+}

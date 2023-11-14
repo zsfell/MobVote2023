@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mule:tiny_iron_golem",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/tiny_iron_golem"
+			},
+			"geometry": {
+				"default": "geometry.tiny_iron_golem"
+			},
+			"animations": {
+				"idle": "animation.tiny_villager.golem_idle"
+			},
+			"scripts": {
+                "animate": ["idle"]
+            },
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#9c9c9c",
+				"overlay_color": "#f0dddd"
+			}
+		}
+	}
+}

@@ -1,0 +1,33 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:mob_platform",
+            "materials": { "default": "entity_alphatest" },
+            "textures": {
+                "cow": "textures/entity/mob_party/cow_platform",
+                "chicken": "textures/entity/mob_party/chicken_platform",
+                "pig": "textures/entity/mob_party/pig_platform",
+                "fox": "textures/entity/mob_party/fox_platform",
+                "zombie": "textures/entity/mob_party/zombie_platform",
+                "creeper": "textures/entity/mob_party/creeper_platform",
+                "enderman": "textures/entity/mob_party/enderman_platform"
+            },
+            "geometry": { "default": "geometry.mob_platform" },
+            "render_controllers": [ "controller.render.mob_platform" ],
+            "spawn_egg": { "base_color": "#ac056e", "overlay_color": "#057883" },
+            "animations": {
+                "reveal": "animation.mob_platform.reveal",
+                "hide": "animation.mob_platform.hide",
+                "crumble": "animation.mob_platform.crumble",
+                "spawn": "animation.mob_platform.spawn",
+                "controller": "controller.animation.mob_platform"
+            },
+            "scripts": {
+                "initialize": [ "v.status = 'reveal';" ],
+                "pre_animation": [ "v.status = q.property('mule:status');" ],
+                "animate": [ "controller" ]
+            }
+        }
+    }
+}

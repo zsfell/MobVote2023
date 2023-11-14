@@ -1,0 +1,29 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mule:tiny_vu_adventurer",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/tiny_vu_adventurer"
+			},
+			"geometry": {
+				"default": "geometry.tiny_vu"
+			},
+			"animations": {
+				"icon": "animation.npc_hosts.icon",
+                "idle": "animation.tiny_host.idle"
+            },
+            "scripts": {
+                "animate": ["idle", "icon"]
+            },
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#623626",
+				"overlay_color": "#e0ca6d"
+			}
+		}
+	}
+}

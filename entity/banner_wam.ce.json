@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mule:banner_wam",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/minigame_boards"
+			},
+			"geometry": {
+				"default": "geometry.banner_wam"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#7d1873",
+				"overlay_color": "#12fbb0"
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:tiny_agnes",
+            "materials": { "default": "entity_alphatest" },
+            "textures": { "default": "textures/entity/tiny_agnes" },
+            "geometry": { "default": "geometry.tiny_agnes" },
+            "animations": {
+                "idle": "animation.tiny_host.idle",
+				"icon": "animation.npc_hosts.icon"
+            },
+            "scripts": {
+                "animate": ["idle", "icon"]
+            },
+            "render_controllers": [ "controller.render.default" ],
+            "spawn_egg": { "base_color": "#D6F3EC", "overlay_color": "#2B6DA5" }
+        }
+    }
+}

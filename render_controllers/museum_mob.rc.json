@@ -1,0 +1,33 @@
+{
+    "format_version": "1.20.0",
+    "render_controllers": {
+        "controller.render.museum_mob": {
+            "geometry": "Geometry.default",
+            "materials": [{ "*": "Material.default" }],
+            "textures": [ "array.t[q.mark_variant-1]" ],
+            "ignore_lighting": true,
+            "arrays": {
+                "textures": {
+                    "array.t": [
+                        "Texture.glare",
+                        "Texture.iceologer",
+                        "Texture.meerkat",
+                        "Texture.moo_bloom",
+                        "Texture.ostritch",
+                        "Texture.rascal",
+                        "Texture.tuff",
+                        "Texture.vulture",
+                        "Texture.copper_golem"
+                    ]
+                }
+            },
+            "overlay_color": {
+                "r": 0,
+                "g": "q.distance_from_camera > 5.5 ? 0 : (math.sin(q.time_stamp*30)+1)",
+                "b": 0,
+                "a": "0.3"
+            },
+            "light_color_multiplier": "(1.5)"
+        }
+    }
+}

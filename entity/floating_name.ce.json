@@ -1,0 +1,13 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:floating_name",
+            "materials": { "default": "entity_alphatest" },
+            "textures": { "default": "textures/blank" },
+            "geometry": { "default": "geometry.blank" },
+            "scripts": { "should_update_bones_and_effects_offscreen": true },
+            "render_controllers": [ "controller.render.floating_name" ]
+        }
+    }
+}

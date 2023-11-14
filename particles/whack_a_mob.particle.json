@@ -1,0 +1,91 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "mule:whack_a_mob",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particle/star"
+			}
+		},
+		"curves": {
+			"variable.x": {
+				"type": "linear",
+				"input": "v.o",
+				"horizontal_range": "v.p",
+				"nodes": [-2,-0.75,0,0.75,2,1,1.5,0,-1,-1.5,-1.5]
+			},
+            "variable.y": {
+				"type": "linear",
+				"input": "v.o",
+				"horizontal_range": "v.p",
+				"nodes": [1,1,2,1,1,0,-1,-0.5,0,-1,-1]
+			},
+            "variable.speed": {
+				"type": "linear",
+				"input": "v.o",
+				"horizontal_range": "v.p",
+				"nodes": [1,0.4,0.75,0.4,1,0.5,1,0.5,0.5,1,1]
+			},
+            "variable.size": {
+				"type": "bezier",
+				"input": "v.particle_age",
+				"horizontal_range": "v.particle_lifetime",
+				"nodes": [0,1,1,0]
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": "variable.p"
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {
+                "offset": [
+					0,
+					0,
+					0
+				],
+                "direction": [
+                    "variable.x",
+					"variable.y-0.5",
+                    0
+                ]
+            },
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 0.35
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["0.2*v.size", "0.2*v.size"],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 12,
+					"texture_height": 12,
+					"uv": [0, 0],
+					"uv_size": [12, 12]
+				}
+			},
+            "minecraft:particle_initial_speed": "v.speed*8",
+			"minecraft:particle_motion_dynamic": {
+				"linear_drag_coefficient": 6
+			},
+            "minecraft:emitter_initialization": {
+				"creation_expression": "variable.o = 0; variable.p = 10; variable.d = 360; variable.deg = 0; variable.rad = 4;"
+			},
+			"minecraft:particle_lifetime_events": {
+				"creation_event": [
+					"pspawn"
+				]
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": 0
+			}
+		},
+		"events": {
+			"pspawn": {
+				"expression": "variable.o = variable.o + 1; variable.deg = (variable.d/variable.p)*variable.o;"
+			}
+		}
+	}
+}

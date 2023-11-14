@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:skull",
+      "textures": {
+        "zombie": "textures/entity/tiny_zombie"
+      },
+      "geometry": {
+        "zombie": "geometry.skull_zombie"
+      }
+    }
+  }
+}

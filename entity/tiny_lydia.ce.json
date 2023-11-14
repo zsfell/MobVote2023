@@ -1,0 +1,20 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:tiny_lydia",
+            "materials": { "default": "entity_alphatest" },
+            "textures": { "default": "textures/entity/tiny_lydia" },
+            "geometry": { "default": "geometry.tiny_lydia" },
+            "animations": {
+                "idle": "animation.tiny_host.idle",
+				"icon": "animation.npc_hosts.icon"
+            },
+            "scripts": {
+                "animate": ["idle", "icon"]
+            },
+            "render_controllers": [ "controller.render.default" ],
+            "spawn_egg": { "base_color": "#D6F3EC", "overlay_color": "#4489c2" }
+        }
+    }
+}

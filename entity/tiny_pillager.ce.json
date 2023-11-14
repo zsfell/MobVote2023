@@ -1,0 +1,30 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mule:tiny_pillager",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/tiny_pillager"
+			},
+			"geometry": {
+				"default": "geometry.tiny_pillager"
+			},
+			"animations": {
+				"idle":"animation.tiny_villager.villager_idle",
+				"icon": "animation.npc_hosts.icon",
+				"icon_bob": "animation.npc_hosts.icon_bob"
+			},
+			"scripts": {
+				"animate": ["idle", "icon", "icon_bob"]
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#979b9c",
+				"overlay_color": "#8c1644"
+			}
+		}
+	}
+}

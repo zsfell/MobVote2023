@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:wam_zombie",
+            "materials": { "default": "entity_alphatest" },
+            "textures": { "default": "textures/entity/tiny_zombie" },
+            "geometry": { "default": "geometry.tiny_zombie" },
+            "animations": {
+                "dance": "animation.tiny_zombie.dance",
+                "spawn": "animation.tiny_creeper.spawn2",
+                "bonk": "animation.tiny_creeper.bonk2",
+                "fx_locator": "animation.tiny_zombie.fx_locator",
+                "wam_control": "controller.animation.wam.mobs",
+                "hit_fx": "animation.wam.hit_particle"
+            },
+            "particle_effects": { "whack": "mule:whack_a_mob" },
+            "scripts": { "animate": [ "wam_control", "fx_locator" ]},
+            "render_controllers": [ "controller.render.default" ],
+            "spawn_egg": { "base_color": "#2b7747", "overlay_color": "#a748b8" }
+        }
+    }
+}

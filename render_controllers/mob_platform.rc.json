@@ -1,0 +1,23 @@
+{
+    "format_version": "1.20.0",
+    "render_controllers": {
+        "controller.render.mob_platform": {
+            "geometry": "Geometry.default",
+            "materials": [{ "*": "Material.default" }],
+            "textures": [ "array.t[q.property('mule:mob_id')]" ],
+            "arrays": {
+                "textures": {
+                    "array.t": [
+                        "Texture.cow",
+                        "Texture.chicken",
+                        "Texture.pig",
+                        "Texture.fox",
+                        "Texture.zombie",
+                        "Texture.creeper",
+                        "Texture.enderman"
+                    ]
+                }
+            }
+        }
+    }
+}

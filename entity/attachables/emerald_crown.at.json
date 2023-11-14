@@ -1,0 +1,18 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "mule:emerald_crown",
+            "materials": {
+                "default": "armor"
+            },
+            "textures": {
+                "default": "textures/entity/emerald_crown"
+            },
+            "geometry": {
+                "default": "geometry.emerald_crown"
+            },
+            "render_controllers": ["controller.render.default"]
+        }
+    }
+}

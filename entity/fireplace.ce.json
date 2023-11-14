@@ -1,0 +1,16 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:fireplace",
+            "materials": { "default": "entity_alphatest", "animated": "animated_alphatest" },
+            "textures": {
+                "default": "textures/entity/fireplace"
+            },
+            "geometry": { "default": "geometry.fireplace" },
+            "render_controllers": [
+                "controller.render.fireplace_animation"
+            ]
+        }
+    }
+}

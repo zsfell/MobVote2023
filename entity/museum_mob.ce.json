@@ -1,0 +1,25 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:museum_mob",
+            "materials": { "default": "entity_alphatest" },
+            "textures": {
+                "copper_golem": "textures/entity/MobvoteSprites/copper_golem",
+                "glare": "textures/entity/MobvoteSprites/glare",
+                "iceologer": "textures/entity/MobvoteSprites/iceologer",
+                "meerkat": "textures/entity/MobvoteSprites/meerkat",
+                "moo_bloom": "textures/entity/MobvoteSprites/moo_bloom",
+                "ostritch": "textures/entity/MobvoteSprites/ostritch",
+                "rascal": "textures/entity/MobvoteSprites/rascal",
+                "tuff": "textures/entity/MobvoteSprites/tuff",
+                "vulture": "textures/entity/MobvoteSprites/vulture"
+            },
+            "geometry": { "default": "geometry.easter_egg" },
+            "animations": { "rotate_face": "animation.direction.rotate_face" },
+            "scripts": { "animate": ["rotate_face"] },
+            "render_controllers": ["controller.render.museum_mob"],
+            "spawn_egg": { "base_color": "#D6F3EC", "overlay_color": "#F8A349" }
+        }
+    }
+}

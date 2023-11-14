@@ -1,0 +1,35 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:mob_firework",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "geometry": {
+                "default": "geometry.blank"
+            },
+            "animations": {
+                "firework_trail": "animation.voting.firework_trail",
+                "firework_boom_a": "animation.voting.firework_boom_a",
+                "firework_boom_b": "animation.voting.firework_boom_b",
+                "firework_boom_c": "animation.voting.firework_boom_c"
+            },
+            "scripts": {
+                "animate": [
+                    {"firework_trail": "!q.is_tamed && !q.is_ignited && !q.is_sheared"},
+                    {"firework_boom_a": "q.is_tamed"},
+                    {"firework_boom_b": "q.is_ignited"},
+                    {"firework_boom_c": "q.is_sheared"}
+                ]
+            },
+            "particle_effects": {
+                "trail": "mule:firework_trail",
+                "mob_a": "mule:firework_mob_a",
+                "mob_b": "mule:firework_mob_b",
+                "mob_c": "mule:firework_mob_c"
+            },
+            "textures": { "default": "textures/entity/blank" }
+        }
+    }
+}

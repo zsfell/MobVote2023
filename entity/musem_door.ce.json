@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "mule:museum_door",
+            "materials": { "default": "entity_alphatest" },
+            "textures": { "default": "textures/entity/blank" },
+            "geometry": { "default": "geometry.blank" },
+            "scripts": { "scale": "1-query.camera_distance_range_lerp(19,20)" },
+            "render_controllers": [ "controller.render.museum_door" ],
+            "spawn_egg": { "base_color": "#D6F3EC", "overlay_color": "#F8A349" }
+        }
+    }
+}

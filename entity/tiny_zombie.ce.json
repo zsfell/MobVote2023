@@ -1,0 +1,26 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mule:tiny_zombie",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/tiny_zombie"
+			},
+            "animations": {
+                "dance": "animation.tiny_zombie.dance"
+            },
+            "scripts": { "animate": [ "dance" ]},
+			"geometry": {
+				"default": "geometry.tiny_zombie"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#2b7747",
+				"overlay_color": "#26a027"
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "mule:replica_hat",
+            "materials": {
+                "default": "armor"
+            },
+            "textures": {
+                "default": "textures/entity/replica_hat"
+            },
+            "geometry": {
+                "default": "geometry.replica_hat"
+            },
+            "scripts": {
+                "parent_setup": "variable.helmet_layer_visible = 0.0;"
+            },
+            "render_controllers": ["controller.render.default"]
+        }
+    }
+}
