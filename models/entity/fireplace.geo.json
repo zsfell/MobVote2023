@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.fireplace",
+				"texture_width": 45,
+				"texture_height": 45,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-15, 0, 0],
+							"size": [30, 30, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [45, 45]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

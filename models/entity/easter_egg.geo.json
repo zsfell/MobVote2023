@@ -1,0 +1,30 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.easter_egg",
+				"texture_width": 68,
+				"texture_height": 68,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 8, 0],
+					"cubes": [
+						{
+							"origin": [-16, 0, 0],
+							"size": [32, 32, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [68, 68]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

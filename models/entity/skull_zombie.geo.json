@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.skull_zombie",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [0, 24, 0],
+					"cubes": [
+						{
+							"origin": [-4, 24, -4],
+							"size": [8, 8, 7],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [11, 11]},
+								"east": {"uv": [11, 0], "uv_size": [9.5, 11]},
+								"south": {"uv": [0, 11], "uv_size": [11, 11]},
+								"west": {"uv": [11, 11], "uv_size": [9.5, 11]},
+								"up": {"uv": [32, 9.5], "uv_size": [-11, -9.5]},
+								"down": {"uv": [32, 19.5], "uv_size": [-11, -9.5]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

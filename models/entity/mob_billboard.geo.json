@@ -1,0 +1,68 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.mob_billboard",
+				"texture_width": 144,
+				"texture_height": 144,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "billboard",
+					"parent": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "front_panel",
+					"parent": "billboard",
+					"pivot": [0, 0, -1],
+					"cubes": [
+						{
+							"origin": [-16, -16, -1],
+							"size": [32, 32, 0],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [48, 48]}
+							}
+						}
+					]
+				},
+				{
+					"name": "middle_panel",
+					"parent": "billboard",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-16, -16, 0],
+							"size": [32, 32, 0],
+							"uv": {
+								"north": {"uv": [48, 0], "uv_size": [48, 48]}
+							}
+						}
+					]
+				},
+				{
+					"name": "back_panel",
+					"parent": "billboard",
+					"pivot": [0, 0, 1],
+					"cubes": [
+						{
+							"origin": [-16, -16, 1],
+							"size": [32, 32, 0],
+							"uv": {
+								"north": {"uv": [96, 0], "uv_size": [48, 48]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
