@@ -1,0 +1,23 @@
+{
+    "resource_pack_name": "complox RP",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "cx.wrench": { "textures": { "path": "textures/items/complox/wrench" } },
+        "mule.configurables": { "textures": { "path": "textures/items/misc/configurables" } },
+        "mule.clipboard": { "textures": { "path": "textures/items/misc/clipboard" } },
+        "mule.leave": { "textures": { "path": "textures/items/misc/leave" } },
+        "frog_hat": { "textures": { "path": "textures/items/frog_hat" } },
+        "purple_balloon": { "textures": { "path": "textures/items/purple_balloon" } },
+        "gold_balloon": { "textures": { "path": "textures/items/gold_balloon" } },
+        "beebon": { "textures": { "path": "textures/items/beebon" } },
+        "creepers_and_creme": { "textures": { "path": "textures/items/creepers_and_creme" } },
+        "sour_spider_eyes": { "textures": { "path": "textures/items/sour_spider_eyes" } },
+        "turtle_tart": { "textures": { "path": "textures/items/turtle_tart" } },
+        "ender_pearl_boba": { "textures": { "path": "textures/items/ender_pearl_boba" } },
+        "cotton_allay": { "textures": { "path": "textures/items/cotton_allay" } },
+        "ghastly_gelato": { "textures": { "path": "textures/items/ghastly_gelato" } },
+        "emerald_crown": { "textures": { "path": "textures/items/emerald_crown" } },
+        "replica_hat": { "textures": { "path": "textures/items/replica_hat" } },
+        "wam_hammer": { "textures": { "path": "textures/items/wam_hammer" } }
+    }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "flipbook_texture": "textures/blocks/torch_on.png",
+    "atlas_tile_variant": 0,
+    "atlas_tile": "torch_on",
+    "ticks_per_frame": 2,
+    "blend_frames": false,
+    "frames": [ 0, 1, 2, 3]
+  },
+  {
+    "flipbook_texture": "textures/blocks/custom/fan_block.png",
+    "atlas_tile_variant": 0,
+    "atlas_tile": "fan_block",
+    "ticks_per_frame": 2,
+    "blend_frames": false
+  }
+]
