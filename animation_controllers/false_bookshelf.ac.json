@@ -1,0 +1,60 @@
+{
+    "format_version": "1.20.0",
+    "animation_controllers": {
+        "controller.animation.false_bookshelf": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "open_static": "q.distance_from_camera < 4"
+                        },
+                        {
+                            "closed_static": "q.distance_from_camera >= 4"
+                        }
+                    ]
+                },
+                "closed_static": {
+                    "animations": [
+                        "closed_static"
+                    ],
+                    "transitions": [
+                        {
+                            "opening": "q.distance_from_camera < 4"
+                        }
+                    ]
+                },
+                "opening": {
+                    "animations": [
+                        "opening"
+                    ],
+                    "transitions": [
+                        {
+                            "open_static": "query.all_animations_finished"
+                        }
+                    ]
+                },
+                "open_static": {
+                    "animations": [
+                        "open_static"
+                    ],
+                    "transitions": [
+                        {
+                            "closing": "q.distance_from_camera >= 4"
+                        }
+                    ]
+                },
+                "closing": {
+                    "animations": [
+                        "closing"
+                    ],
+                    "transitions": [
+                        {
+                            "closed_static": "query.all_animations_finished"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

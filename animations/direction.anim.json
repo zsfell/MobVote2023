@@ -1,0 +1,11 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.direction.static": { "loop": true, "bones": { "root": { "rotation": [ 0, "-query.body_y_rotation", 0 ]}}},
+        "animation.direction.rotate_face": {
+            "loop": true,
+            "bones": { "root": { "rotation": [ 0, "query.rotation_to_camera(1)", 0 ]}}
+        },
+        "animation.direction.rotate_face_xy": { "loop": true, "bones": { "root": { "rotation": [ 0, "180", 0 ]}}}
+    }
+}

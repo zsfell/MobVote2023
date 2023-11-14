@@ -1,0 +1,46 @@
+// @prettier-ignore
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.mob_platform": {
+            "initial_state": "spawn",
+            "states": {
+                "spawn": {
+                    "animations": [ "spawn" ],
+                    "transitions": [
+                        { "hide": "v.status == 'hidden'" },
+                        { "empty": "v.status == 'empty'" },
+                        { "idle": "q.all_animations_finished" }
+                    ]
+                },
+                "idle": {
+                    "transitions": [
+                        { "hide": "v.status == 'hidden'" },
+                        { "empty": "v.status == 'empty'" }
+                    ]
+                },
+                "hide": {
+                    "animations": [ "hide" ],
+                    "transitions": [
+                        { "reveal": "v.status == 'full'" },
+                        { "empty": "v.status == 'empty'" }
+                    ]
+                },
+                "empty": {
+                    "animations": [ "crumble" ],
+                    "transitions": [
+                        { "hide": "v.status == 'hidden'" },
+                        { "reveal": "v.status == 'full'" }
+                    ]
+                },
+                "reveal": {
+                    "animations": [ "reveal" ],
+                    "transitions": [
+                        { "hide": "v.status == 'hidden'" },
+                        { "empty": "v.status == 'empty'" }
+                    ]
+                }
+            }
+        }
+    }
+}

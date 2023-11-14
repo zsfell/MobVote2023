@@ -1,0 +1,46 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.attachable_balloon.float": {
+			"loop": true,
+			"bones": {
+				"balloon": {
+					"rotation": [0, 0, "math.sin(q.anim_time*90+40)*4"],
+					"position": ["math.sin(q.anim_time*90+60)*-2", "math.sin(q.anim_time*90)*2", 0]
+				},
+				"segment1": {
+					"position": [0, "2-math.sin(q.anim_time*90)*2", 0],
+					"scale": [1, 1.15, 1]
+				}
+			}
+		},
+		"animation.attachable_balloon.pose": {
+			"loop": true,
+			"bones": {
+				"rightItem": {
+					"rotation": [40, 0, 0],
+					"position": [0, 0, -3]
+				},
+				"balloon": {
+					"rotation": [-25, 0, 0],
+					"position": [1, 0.64279, -0.76604]
+				},
+				"segement3": {
+					"rotation": [30, 0, 0]
+				},
+				"segment2": {
+					"rotation": [30, 0, 0]
+				}
+			}
+		},
+		"animation.attachable_balloon.fp": {
+			"loop": true,
+			"bones": {
+				"balloon": {
+					"rotation": [120, 45, 0],
+					"position": [-7.29885, -30.98809, -1.13387]
+				}
+			}
+		}
+	}
+}

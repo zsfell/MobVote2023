@@ -1,0 +1,55 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.wam.mobs": {
+            "initial_state": "spawn",
+            "states": {
+                "spawn": {
+                    "animations": ["spawn"],
+                    "transitions": [{ "dance": "q.all_animations_finished" }],
+                    "blend_transition": 0.5,
+                    "blend_via_shortest_path": true
+                },
+                "dance": { "animations": ["dance"], "transitions": [{ "bonk": "q.property('mule:is_smashed')" }] },
+                "bonk": { "animations": ["bonk", "hit_fx"] }
+            }
+        },
+        "controller.animation.wam.creeper": {
+            "initial_state": "spawn",
+            "states": {
+                "spawn": {
+                    "animations": ["spawn"],
+                    "transitions": [{ "dance": "q.all_animations_finished" }],
+                    "blend_transition": 0.2,
+                    "blend_via_shortest_path": true
+                },
+                "dance": {
+                    "animations": ["dance"],
+                    "transitions": [{ "swell": "q.property('mule:is_exploding')" }, { "bonk": "q.property('mule:is_smashed')" }]
+                },
+                "swell": { "animations": ["swell", "fuse_sfx"] },
+                "bonk": { "animations": ["bonk", "hit_fx"] }
+            }
+        },
+        "controller.animation.wam.villager": {
+            "initial_state": "spawn",
+            "states": {
+                "spawn": {
+                    "animations": ["spawn"],
+                    "transitions": [{ "dance": "q.all_animations_finished" }],
+                    "blend_transition": 0.5,
+                    "blend_via_shortest_path": true
+                },
+                "dance": {
+                    "animations": ["dance"],
+                    "transitions": [
+                        { "bonk": "q.property('mule:is_smashed')" },
+                        { "despawn": "q.has_property('mule:is_despawning') ? q.property('mule:is_despawning'): 0" }
+                    ]
+                },
+                "bonk": { "animations": ["bonk", "hit_fx"] },
+                "despawn": { "animations": ["despawn"] }
+            }
+        }
+    }
+}

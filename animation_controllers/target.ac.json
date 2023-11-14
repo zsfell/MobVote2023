@@ -1,0 +1,33 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+            "controller.animation.target" : {
+                "initial_state" : "idle",
+                "states" : {
+                    "idle" : {
+                        "animations" : [ "idle" ],
+                        "transitions": [
+                            {"pop": "q.is_ignited"}
+                        ],
+                        "blend_transition": 0.1,
+                        "blend_via_shortest_path": true
+                    },
+                    "pop":{
+                        "animations" : [ "pop"],
+                        "transitions": [
+                            {"inflate": "!q.is_ignited"}
+                        ],
+                        "blend_transition": 0.1,
+                        "blend_via_shortest_path": true
+                    },
+                    "inflate": {
+                        "animations": ["inflate"],
+                        "transitions": [
+                            {"idle": "q.all_animations_finished"}
+                        ]
+                    }
+                }
+            }
+        }
+    }
+	

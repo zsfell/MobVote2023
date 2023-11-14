@@ -1,0 +1,9 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.mob_billboard.rotation_to_camera": {
+            "loop": true,
+            "bones": { "root": { "rotation": [ "q.rotation_to_camera(0)/6", "q.rotation_to_camera(1)", 0 ]}}
+        }
+    }
+}

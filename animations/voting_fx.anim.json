@@ -1,0 +1,41 @@
+{
+    "format_version": "1.20.0",
+    "animations": {
+        "animation.voting.firework_trail": {
+            "loop": true,
+            "animation_length": 1,
+            "particle_effects": {
+                "0.0": {
+                    "effect": "trail"
+                }
+            }
+        },
+        "animation.voting.firework_boom_a": {
+            "loop": false,
+            "animation_length": 1,
+            "particle_effects": {
+                "0.0": {
+                    "effect": "mob_a"
+                }
+            }
+        },
+        "animation.voting.firework_boom_b": {
+            "loop": false,
+            "animation_length": 1,
+            "particle_effects": {
+                "0.0": {
+                    "effect": "mob_b"
+                }
+            }
+        },
+        "animation.voting.firework_boom_c": {
+            "loop": false,
+            "animation_length": 1,
+            "particle_effects": {
+                "0.0": {
+                    "effect": "mob_c"
+                }
+            }
+        }
+    }
+}
