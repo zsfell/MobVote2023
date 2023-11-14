@@ -1,0 +1,39 @@
+{
+    "namespace": "phud_currency",
+    "main": {
+        "type": "panel",
+        "size": [ "100%cm", "100%cm" ],
+        "controls": [
+            { "background@phud.background": { "size": [ "100%sm + 5px", "100%sm + 2px" ]}},
+            { "content@content": {}}
+        ]
+    },
+    "content": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "size": [ "100%c", "100%cm" ],
+        "controls": [{ "icon@icon": {}}, { "separator": { "type": "panel", "size": [ 3, 0 ]}}, { "value@value": {}}],
+        "layer": 1
+    },
+    "icon": { "type": "image", "texture": "textures/ui/phud/currency", "size": "$icon" },
+    "value": {
+        "type": "panel",
+        "size": [ "100%cm", "100%sm" ],
+        "controls": [
+            {
+                "label": {
+                    "type": "label",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "font_scale_factor": "$font_scale",
+                    "offset": [ 0, 1 ],
+                    "text": "#level_number",
+                    "color": "$color",
+                    "bindings": [{ "binding_name": "#level_number", "binding_type": "global" }]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "ui_defs": [
+        "ui/phud/phud.json",
+        "ui/phud/time.json",
+        "ui/phud/island.json",
+        "ui/phud/scavenger.json",
+        "ui/phud/phone.json",
+        "ui/phud/vote.json",
+        "ui/phud/currency.json",
+        "ui/form/popup.json",
+        "ui/form/vendor.json",
+        "ui/gm1_common.json"
+    ]
+}

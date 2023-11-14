@@ -1,0 +1,51 @@
+{
+    "namespace": "phud_scavenger",
+    "main": {
+        "type": "panel",
+        "size": [ "100%cm", "100%cm" ],
+        "controls": [
+            { "background@phud.background": { "size": [ "100%sm + 5px", "100%sm + 2px" ]}},
+            { "content@content": {}}
+        ]
+    },
+    "content": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "size": [ "100%c", "100%cm" ],
+        "controls": [{ "icon@icon": {}}, { "separator": { "type": "panel", "size": [ 2, 0 ]}}, { "value@value": {}}],
+        "layer": 1
+    },
+    "icon": { "type": "image", "texture": "textures/ui/phud/scavenger", "size": "$icon" },
+    "value": {
+        "type": "panel",
+        "size": [ "100%cm", "100%sm" ],
+        "controls": [
+            {
+                "label": {
+                    "type": "label",
+                    "text": "#text",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "font_scale_factor": "$font_scale",
+                    "offset": [ 0, 1 ],
+                    "$color": "$color",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "elements",
+                            "source_property_name": "#scavenger",
+                            "target_property_name": "#value"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "('§r' + #value + '/9')",
+                            "target_property_name": "#text"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

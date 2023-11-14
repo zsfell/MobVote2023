@@ -1,0 +1,38 @@
+{
+    "entity_sounds": {
+        "entities": {
+            "mule:wam_zombie": {
+                "events": {
+                    "ambient": "zombie_say",
+                    "hurt": "zombie_hurt"
+                },
+                "pitch": [0.8, 1.2],
+                "volume": 1
+            },
+            "mule:wam_enderman": {
+                "events": {
+                    "ambient": "mob.endermen.idle",
+                    "hurt": "mob.endermen.hit"
+                },
+                "pitch": [0.8, 1.2],
+                "volume": 1
+            },
+            "mule:wam_creeper": {
+                "events": {
+                    "ambient": "creeper_say",
+                    "hurt": "creeper_death"
+                },
+                "pitch": [0.8, 1.2],
+                "volume": 1
+            },
+            "mule:wam_villager": {
+                "events": {
+                    "ambient": "villager_say",
+                    "hurt": "villager_death"
+                },
+                "pitch": [0.8, 1.2],
+                "volume": 1
+            }
+        }
+    }
+}

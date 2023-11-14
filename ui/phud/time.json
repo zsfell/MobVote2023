@@ -1,0 +1,131 @@
+{
+    "namespace": "phud_time",
+    "main": { "type": "panel", "controls": [{ "background@phud.background": {} }, { "content@content": {} }] },
+    "content": {
+        "type": "panel",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "size": ["100% - 4px", "100% - 4px"],
+        "controls": [{ "logo@logo": {} }, { "text_selector@text_selector": {} }],
+        "layer": 1
+    },
+    "logo": {
+        "type": "image",
+        "texture": "textures/ui/phud/live",
+        "size": ["100%", "100% - 100%c - 2px"],
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "controls": [{ "label": { "type": "label", "text": "", "font_scale_factor": "$font_scale", "layer": 100 } }]
+    },
+    "text_selector": {
+        "type": "panel",
+        "size": ["100%c", "100%cm"],
+        "anchor_from": "bottom_middle",
+        "anchor_to": "bottom_middle",
+        "controls": [{ "text__countdown@text__countdown": {} }, { "text__link@text__link": {} }]
+    },
+    "text__link": {
+        "type": "label",
+        "text": "aka.ms/minecraftlive",
+        "font_scale_factor": "$font_scale",
+        "color": "$color",
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "elements",
+                "source_property_name": "#time",
+                "target_property_name": "#value"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#value = 0 or #value < 0)",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "text__countdown": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "size": ["100%c", "100%cm"],
+        "controls": [
+            {
+                "starts_in": {
+                    "type": "label",
+                    "text": "phud.time.countdown",
+                    "font_scale_factor": "$font_scale",
+                    "color": "$color"
+                }
+            },
+            { "colon": { "type": "label", "text": ":", "font_scale_factor": "$font_scale", "color": "$color" } },
+            { "s0@space": {} },
+            { "days@time_digit": { "$suffix": "phud.time.day", "$binding": "#day", "$visible": "(#day > 0)" } },
+            { "hours@time_digit": { "$suffix": "phud.time.hour", "$binding": "#hour", "$visible": "(#day > 0 or #hour > 0)" } },
+            {
+                "minutes@time_digit": {
+                    "$suffix": "phud.time.minute",
+                    "$binding": "#minute",
+                    "$visible": "(#zero = 0)",
+                    "$trailing_space": false
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "elements",
+                "source_property_name": "#time",
+                "target_property_name": "#value"
+            },
+            { "binding_type": "view", "source_property_name": "(#value > 0)", "target_property_name": "#visible" },
+            { "binding_type": "view", "source_property_name": "(#value / 1440)", "target_property_name": "#day" },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#value - (#day * 1440))",
+                "target_property_name": "#value_less_day"
+            },
+            { "binding_type": "view", "source_property_name": "(#value_less_day / 60)", "target_property_name": "#hour" },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#value_less_day - (#hour * 60))",
+                "target_property_name": "#value_less_hour"
+            },
+            { "binding_type": "view", "source_property_name": "#value_less_hour", "target_property_name": "#minute" }
+        ]
+    },
+    "time_digit": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "size": ["100%c", "100%cm"],
+        "$trailing_space": true,
+        "controls": [
+            {
+                "value": {
+                    "type": "label",
+                    "text": "#text",
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "text__countdown",
+                            "source_property_name": "('§r' + $binding)",
+                            "target_property_name": "#text"
+                        }
+                    ],
+                    "color": "$color",
+                    "font_scale_factor": "$font_scale"
+                }
+            },
+            { "suffix": { "type": "label", "text": "$suffix", "font_scale_factor": "$font_scale", "color": "$color" } },
+            { "space@space": { "visible": "$trailing_space" } }
+        ],
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "text__countdown",
+                "source_property_name": "$visible",
+                "target_property_name": "#visible"
+            }
+        ],
+        "property_bag": { "#zero": 0 }
+    },
+    "space": { "type": "label", "text": " ", "font_scale_factor": "$font_scale" }
+}

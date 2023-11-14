@@ -1,0 +1,274 @@
+{
+    "namespace": "form_vendor",
+    "main": {
+        "type": "panel",
+        "size": [300, 150],
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "controls": [{ "header@header": {} }, { "shop@shop": {} }]
+    },
+    "header@gm1_common.header": {
+        "offset": [0, -7],
+        "anchor_to": "center",
+        "$title": "title",
+        "layer": 1,
+        "size": ["90%", "200%c"],
+        "$close_button_to_button_id": "button.menu_exit"
+    },
+    "title@gm1_common.title": {
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "vendor",
+                "source_property_name": "#title",
+                "target_property_name": "#title_text"
+            }
+        ]
+    },
+    "shop": {
+        "type": "stack_panel",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "size": ["100%", "100%"],
+        "orientation": "horizontal",
+        "controls": [{ "sidebar@sidebar": {} }, { "page@page": {} }]
+    },
+    "sidebar": {
+        "type": "image",
+        "size": ["30%", "100%"],
+        "texture": "textures/ui/vendor/left_panel",
+        "controls": [
+            {
+                "sidebar_wrapper": {
+                    "type": "panel",
+                    "offset": [0, "1.5%"],
+                    "size": ["88.5%", "80%"],
+                    "anchor_from": "right_middle",
+                    "anchor_to": "right_middle",
+                    "controls": [
+                        { "sidebar_grid@sidebar_grid": {} },
+                        {
+                            "sidebar_tickets@form_button_wrapper": {
+                                "$content": "sidebar_tickets",
+                                "$index": 2,
+                                "anchor_from": "bottom_middle",
+                                "anchor_to": "bottom_middle",
+                                "offset": [-2, 2]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "sidebar_grid": {
+        "type": "grid",
+        "grid_dimensions": [2, 3],
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
+        "size": ["95%", "92.5%"],
+        "controls": [
+            { "0@sidebar_grid_item": { "grid_position": [0, 0], "$index": 3 } },
+            { "1@sidebar_grid_item": { "grid_position": [1, 0], "$index": 4 } },
+            { "2@sidebar_grid_item": { "grid_position": [0, 1], "$index": 5 } },
+            { "3@sidebar_grid_item": { "grid_position": [1, 1], "$index": 6 } },
+            { "4@sidebar_grid_item": { "grid_position": [0, 2], "$index": 7 } },
+            { "5@sidebar_grid_item": { "grid_position": [1, 2], "$index": 8 } }
+        ]
+    },
+    "sidebar_grid_item": {
+        "type": "panel",
+        "size": ["50% - 4px", "33% - 4px"],
+        "controls": [
+            {
+                "sidebar_grid_button": {
+                    "type": "stack_panel",
+                    "size": ["100%", "100%"],
+                    "collection_name": "form_buttons",
+                    "controls": [{ "content@sidebar_grid_button": {} }]
+                }
+            },
+            {
+                "sidebar_grid_icon@form_button_wrapper": {
+                    "$content": "sidebar_grid_icon",
+                    "size": ["75%", "75%"],
+                    "anchor_from": "center",
+                    "anchor_to": "center"
+                }
+            }
+        ]
+    },
+    "sidebar_grid_button@common.button": {
+        "collection_index": "$index",
+        "$pressed_button_name": "button.form_button_click",
+        "locked_control": "locked",
+        "controls": [
+            { "default@grid_button_content": { "texture": "textures/ui/vendor/shop_item" } },
+            { "hover@grid_button_content": { "texture": "textures/ui/vendor/shop_item_hover" } },
+            { "pressed@grid_button_content": { "texture": "textures/ui/vendor/shop_item_hover" } },
+            { "locked@grid_button_content": { "texture": "textures/ui/vendor/shop_item_selected" } }
+        ],
+        "bindings": [
+            { "binding_type": "collection_details", "binding_collection_name": "form_buttons" },
+            {
+                "binding_name": "#form_button_text",
+                "binding_name_override": "#text",
+                "binding_type": "collection",
+                "binding_collection_name": "form_buttons"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#text < '$' or #text > '$􀐏' )",
+                "target_property_name": "#enabled"
+            },
+            { "binding_type": "view", "source_property_name": "(not (#text = ''))", "target_property_name": "#visible" }
+        ]
+    },
+    "grid_button_content": { "type": "image", "size": ["100%", "100%"] },
+    "sidebar_grid_icon": { "type": "image", "texture": "#texture", "layer": 1 },
+    "sidebar_tickets": { "type": "label", "anchor_from": "bottom_middle", "anchor_to": "bottom_middle", "text": "#text" },
+    "page": {
+        "type": "image",
+        "size": ["70%", "100%"],
+        "texture": "textures/ui/vendor/right_panel",
+        "controls": [
+            {
+                "page_wrapper": {
+                    "type": "panel",
+                    "offset": [0, "1.5%"],
+                    "size": ["87.5%", "80%"],
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "controls": [{ "text@page_description_panel": {} }, { "buy@page_buy_panel": {} }]
+                }
+            }
+        ],
+        "layer": -1
+    },
+    "page_description_panel": {
+        "type": "stack_panel",
+        "orientation": "vertical",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [0, 0],
+        "size": ["100%", "100%"],
+        "controls": [
+            { "item_name": { "type": "label", "text": "#form_text", "size": ["100%", "default"] } },
+            { "padding": { "type": "panel", "size": [0, 2] } },
+            { "item_text@item_text_scroll_wrapper": {} }
+        ]
+    },
+    "item_text_scroll_wrapper@common.scrolling_panel": {
+        "size": ["100%", 50],
+        "$always_handle_scrolling": true,
+        "$scrolling_content": "form_vendor.item_text_button_wrapper",
+        "$scroll_box_visible_touch": false,
+        "$show_background": false,
+        "$scroll_bar_left_padding_size": [0, 0],
+        "$scroll_bar_right_padding_size": [0, 0],
+        "$scroll_size": [5, "100%"],
+        "$scroll_size_touch": "$scroll_size",
+        "offset": [0, -1]
+    },
+    "item_text_button_wrapper@form_button_wrapper": {
+        "$content": "item_text",
+        "$index": 0,
+        "size": ["100%", "100%c"]
+    },
+    "item_text": { "type": "label", "text": "#text", "size": ["100%", "default"] },
+    "page_buy_panel": {
+        "type": "stack_panel",
+        "orientation": "vertical",
+        "anchor_from": "bottom_middle",
+        "anchor_to": "bottom_middle",
+        "offset": [0, 0],
+        "size": ["100%cm", "100%c"],
+        "collection_name": "form_buttons",
+        "controls": [{ "price@buy_price_wrapper": {} }, { "button@buy_button": {} }]
+    },
+    "buy_price_wrapper": { "type": "panel", "size": ["100%sm", 25], "controls": [{ "buy_price@buy_price": {} }] },
+    "buy_price": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "controls": [
+            {
+                "price_wrapper": {
+                    "type": "panel",
+                    "size": ["100%c", "100%"],
+                    "controls": [{ "price@form_button_wrapper": { "$content": "buy_price_label", "$index": 1, "offset": [0, 2] } }]
+                }
+            },
+            { "padding": { "type": "panel", "size": [5, 0] } },
+            {
+                "icon": {
+                    "type": "image",
+                    "texture": "textures/ui/phud/currency",
+                    "size": ["100%y", "100%"],
+                    "anchor_from": "center",
+                    "anchor_to": "center"
+                }
+            }
+        ]
+    },
+    "buy_price_label": { "type": "label", "text": "#text", "font_size": "large" },
+    "buy_button@common.button": {
+        "collection_index": 1,
+        "size": ["100%cm", "100%cm"],
+        "$pressed_button_name": "button.form_button_click",
+        "controls": [
+            { "default@buy_button_content": { "texture": "textures/ui/form/button" } },
+            { "hover@buy_button_content": { "texture": "textures/ui/form/button_hover" } },
+            { "pressed@buy_button_content": { "texture": "textures/ui/form/button_hover" } }
+        ],
+        "bindings": [{ "binding_type": "collection_details", "binding_collection_name": "form_buttons" }]
+    },
+    "buy_button_content": {
+        "type": "image",
+        "size": ["150%c", "150%c"],
+        "controls": [
+            {
+                "label": {
+                    "type": "label",
+                    "text": "vendor.buy",
+                    "font_size": "large",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "font_type": "MinecraftTen",
+                    "layer": 1,
+                    "shadow": false,
+                    "offset": [0, -2]
+                }
+            }
+        ]
+    },
+    "form_button_wrapper": {
+        "type": "stack_panel",
+        "$index|default": 0,
+        "size": ["100%c", "100%c"],
+        "collection_name": "form_buttons",
+        "controls": [
+            {
+                "content@$content": {
+                    "collection_index": "$index",
+                    "bindings": [
+                        {
+                            "binding_name": "#form_button_text",
+                            "binding_name_override": "#text",
+                            "binding_type": "collection",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(('' + #text) - '$')",
+                            "target_property_name": "#texture"
+                        }
+                    ],
+                    "anchor_from": "center",
+                    "anchor_to": "center"
+                }
+            }
+        ]
+    }
+}

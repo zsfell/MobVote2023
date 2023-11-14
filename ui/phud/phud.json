@@ -1,0 +1,159 @@
+{
+    "namespace": "phud",
+    "main": { "type": "panel", "size": ["100%", "100%"], "controls": [{ "data@data": {} }, { "elements@elements": {} }] },
+    "data": {
+        "type": "panel",
+        "size": ["100%", "100%"],
+        "bindings": [
+            { "binding_name": "#hud_title_text_string", "binding_name_override": "#text" },
+            {
+                "binding_name": "#hud_title_text_string",
+                "binding_name_override": "#saved_value",
+                "binding_condition": "visibility_changed"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((#text > '$' and #text < '$􀐏') and not (#text = #saved_value))",
+                "target_property_name": "#visible"
+            },
+            { "binding_type": "view", "source_property_name": "(#saved_value - '$')", "target_property_name": "#value" },
+            { "binding_type": "view", "source_property_name": "(#value / 10000)", "target_property_name": "#time" },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#value - (#time * 10000))",
+                "target_property_name": "#value_less_time"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#value_less_time / 1000)",
+                "target_property_name": "#island"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#value_less_time - (#island * 1000))",
+                "target_property_name": "#value_less_island"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#value_less_island / 100)",
+                "target_property_name": "#vote"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#value_less_island - (#vote * 100))",
+                "target_property_name": "#value_less_vote"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#value_less_vote / 10)",
+                "target_property_name": "#scavenger"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(#value_less_vote - (#scavenger * 10))",
+                "target_property_name": "#value_less_scavenger"
+            },
+            { "binding_type": "view", "source_property_name": "#value_less_scavenger", "target_property_name": "#phone" }
+        ]
+    },
+    "elements": {
+        "type": "panel",
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "data",
+                "source_property_name": "#time",
+                "target_property_name": "#time",
+                "resolve_sibling_scope": true
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "data",
+                "source_property_name": "#island",
+                "target_property_name": "#island",
+                "resolve_sibling_scope": true
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "data",
+                "source_property_name": "#vote",
+                "target_property_name": "#vote",
+                "resolve_sibling_scope": true
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "data",
+                "source_property_name": "#scavenger",
+                "target_property_name": "#scavenger",
+                "resolve_sibling_scope": true
+            },
+            {
+                "binding_type": "view",
+                "source_control_name": "data",
+                "source_property_name": "#phone",
+                "target_property_name": "#phone",
+                "resolve_sibling_scope": true
+            }
+        ],
+        "$offset": [0, 0],
+        "offset": "$offset",
+        "variables": [{ "requires": "$pocket_screen", "$offset": [0, 10] }],
+        "controls": [
+            {
+                "time@phud_time.main": {
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "offset": [-8, 8],
+                    "size": [100, 36],
+                    "$font_scale": 0.75,
+                    "$color": [0.82, 0.77, 0.75, 1]
+                }
+            },
+            {
+                "vote@phud_vote.main": {
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "size": [36, 36],
+                    "offset": [-8, 48]
+                }
+            },
+            {
+                "scavenger@phud_scavenger.main": {
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_right",
+                    "offset": [-2, 8],
+                    "$icon": [16, 16],
+                    "$font_scale": 1,
+                    "$color": [1, 1, 1, 1]
+                }
+            },
+            {
+                "currency@phud_currency.main": {
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_left",
+                    "offset": [2, 8],
+                    "$icon": [16, 16],
+                    "$font_scale": 1,
+                    "$color": [1, 1, 0.52, 1]
+                }
+            },
+            {
+                "phone@phud_phone.main": {
+                    "size": [64, 64],
+                    "offset": [8, 0],
+                    "anchor_from": "left_middle",
+                    "anchor_to": "left_middle"
+                }
+            },
+            { "island@phud_island.main": { "visible": false } }
+        ]
+    },
+    "background": {
+        "type": "image",
+        "texture": "textures/ui/hud_tip_text_background",
+        "size": ["100%", "100%"],
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "alpha": 0.6
+    }
+}

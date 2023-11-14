@@ -1,0 +1,41 @@
+{
+    "namespace": "phud_vote",
+    "main": {
+        "type": "panel",
+        "controls": [{ "background@phud.background": {}}, { "content@content": {}}],
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "elements",
+                "source_property_name": "#vote",
+                "target_property_name": "#value"
+            },
+            { "binding_type": "view", "source_property_name": "(#value > 0)", "target_property_name": "#visible" }
+        ]
+    },
+    "content": {
+        "type": "panel",
+        "size": [ "100% - 4px", "100% - 4px" ],
+        "controls": [
+            { "mob_a@icon": { "$value": 1, "$name": "mob_a" }},
+            { "mob_b@icon": { "$value": 2, "$name": "mob_b" }},
+            { "mob_c@icon": { "$value": 3, "$name": "mob_c" }},
+            { "mob_a_win@icon": { "$value": 4, "$name": "mob_a_win" }},
+            { "mob_b_win@icon": { "$value": 5, "$name": "mob_b_win" }},
+            { "mob_c_win@icon": { "$value": 6, "$name": "mob_c_win" }}
+        ]
+    },
+    "icon": {
+        "type": "image",
+        "texture": "('textures/ui/phud/' + $name)",
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "elements",
+                "source_property_name": "#vote",
+                "target_property_name": "#value"
+            },
+            { "binding_type": "view", "source_property_name": "(#value = $value)", "target_property_name": "#visible" }
+        ]
+    }
+}

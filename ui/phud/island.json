@@ -1,0 +1,24 @@
+{
+    "namespace": "phud_island",
+    "main": {
+        "type": "panel",
+        "size": [ 32, 32 ],
+        "offset": [ -4, 4 ],
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "controls": [{ "town@icon": { "$value": 0, "$name": "town" }}, { "stage@icon": { "$value": 1, "$name": "stage" }}]
+    },
+    "icon": {
+        "type": "image",
+        "texture": "('textures/ui/phud/island/' + $name)",
+        "bindings": [
+            {
+                "binding_type": "view",
+                "source_control_name": "elements",
+                "source_property_name": "#island",
+                "target_property_name": "#value"
+            },
+            { "binding_type": "view", "source_property_name": "(#value = $value)", "target_property_name": "#visible" }
+        ]
+    }
+}
